@@ -1,11 +1,9 @@
+import { findModal,addRemoveStyle } from "/modules/helpers";
+
 export const modal = () => {
 	const modalBtns = document.querySelectorAll('.fancyboxModal');
 	const owerlayModal = document.querySelector('.modal-overlay');
-	const width = window.innerWidth;
-	const addRemoveStyle = (el,el2, style) => {
-		el.style.display = style;
-		el2.style.display = style;
-	};
+	
 
 	modalBtns.forEach(el => {
 		el.addEventListener('click', (e) => {
@@ -14,13 +12,7 @@ export const modal = () => {
 			const id = target.href.slice(target.href.indexOf('#'));
 			if (id) {
 				const modal = document.querySelector(id);
-				if ((modal.getBoundingClientRect().x + (+(window.getComputedStyle(modal).width.slice(0, -2)) / 2)) < ((width / 2) - 14)) {
-					modal.style.cssText = `
-					position:fixed;
-					top:20%;
-					left:${((width / 2) - ((window.getComputedStyle(modal).width.slice(0, -2)) / 2))}px;
-					z-index:999;`;
-				}
+				findModal(modal,window.innerWidth);
 				addRemoveStyle(modal, owerlayModal, 'block');
 				
 				window.addEventListener('click', (e) => {
