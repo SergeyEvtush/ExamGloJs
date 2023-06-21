@@ -1,5 +1,5 @@
 import {createDots} from '/modules/dots';
-
+import Swiper from 'swiper/bundle';
 
 export const slider = (sliderBlockClass, slidesClass) => {
 	
@@ -102,3 +102,18 @@ export const slider = (sliderBlockClass, slidesClass) => {
 				
 
 };
+
+export const sliderSwiper = ({sliderClass = '', leftArrow = '', rightArrow = '', slidesPerviev=1}) => {
+	return new Swiper(sliderClass, {
+		direction: 'horizontal',
+		loop:true,
+		grabCursor:true,
+		slidesPerView: slidesPerviev,
+		speed: 400,
+		spaceBetween: 100,
+		navigation: {
+			nextEl: rightArrow,
+			prevEl: leftArrow,
+		 },
+	 });
+ }
