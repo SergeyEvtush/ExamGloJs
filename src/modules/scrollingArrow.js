@@ -3,7 +3,6 @@ import { visiblityElem } from "/modules/helpers";
 export const scrollingArrow = () => {
 	const arrow = document.querySelector('.up');
 	const stepsSection = document.querySelector('.steps-section');
-	console.log(stepsSection);
 	arrow.style.display = 'none';
 // Запускаем функцию при прокрутке страницы
 	window.addEventListener('scroll', () => {

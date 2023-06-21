@@ -6,13 +6,16 @@
   "scripts": {
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
-	 "start":"webpack serve --mode=development --open",
-	 "server":"json-server --watch db/db.json --port=4545"
+    "start": "webpack serve --mode=development --open",
+    "server": "json-server --watch db/db.json --port=4545"
   },
   "author": "Evtushenko",
   "license": "ISC",
   "devDependencies": {
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "swiper": "^9.4.1"
   }
 }

@@ -16,6 +16,10 @@
 
 	<!-- STYLESHEETS :: FONTS -->
 	<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+	<link
 		href='https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,400italic,600,700,700italic,800&subset=latin,cyrillic'
 		rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -94,9 +98,10 @@
 
 
 		<!-- * * * * * * Top slider * * * * * * -->
+		
 		<div class="top-slider white text-center relative">
-			<div class="item relative"
-				style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover;">
+			<div class="item absolute"
+				style="background: url(./images/slide1.jpg) 50% 50% no-repeat; background-size: cover;">
 				<div class="table">
 					<div class="table-cell">
 						<div class="container">
@@ -111,8 +116,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="item relative"
-				style="background: url(images/slide2.jpg) 50% 50% no-repeat; background-size: cover;">
+			<div class="item absolute"
+				style="background: url(./images/slide2.jpg) 50% 50% no-repeat; background-size: cover;">
 				<div class="table">
 					<div class="table-cell">
 						<div class="container">
@@ -127,8 +132,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="item relative"
-				style="background: url(images/slide3.jpg) 50% 50% no-repeat; background-size: cover;">
+			<div class="item absolute"
+				style="background: url(./images/slide3.jpg) 50% 50% no-repeat; background-size: cover;">
 				<div class="table">
 					<div class="table-cell">
 						<div class="container">
@@ -143,8 +148,15 @@
 					</div>
 				</div>
 			</div>
-
+			<a href="#" class="top-slider-btn prev" id="arrow-left">
+				<img src="images/right-arrow_1.svg" alt="arrow">
+			</a>
+			<a href="#" class="top-slider-btn next" id="arrow-right">
+				<img src="images/right-arrow_1.svg" alt="arrow">
+			</a>
+			<div class="top-slider-dots"></div>
 		</div>
+		
 		<!-- * * * * * * Top slider: end * * * * * * -->
 
 
