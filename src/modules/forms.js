@@ -69,10 +69,18 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 					form.style.display = 'block';
 					modalContent.classList.remove('error');
 					modalContent.innerHTML = '';
+					const formText = formContainer.querySelector('.title-h2').innerHTML;
+					formContainer.querySelector('.title-h2').innerHTML =
+						` Ошибка ввода данных в поле:<p> ${elem[bool] === "fio" ? nameInputs["fio"] : nameInputs["tel"]}</p >`;
+					setTimeout(() => {formContainer.querySelector('.title-h2').innerHTML =formText;},2000);
 				}, 2000);
+				
 			}); 
 			
+			console.log(formContainer.querySelector('.title-h2'));
+			
 		} else {  
+			
 			sendData(url, formBody, modalContent, message);
 			formContainer.style.display = 'none';
 			findModal(statusBlock, window.innerWidth);
