@@ -13,8 +13,6 @@ export const slider = (sliderBlockClass, slidesClass) => {
 	let currentSlide = 0;
 	let interval;
 
-
-
 	const prevSlide = (elems,index,strClass) => { 
 		elems[index].classList.remove(strClass);
 	};
@@ -99,8 +97,6 @@ export const slider = (sliderBlockClass, slidesClass) => {
 	} else {
 		createSlider();
 	 }
-				
-
 };
 
 export const sliderSwiper = ({sliderClass = '', leftArrow = '', rightArrow = '', slidesPerviev=1}) => {

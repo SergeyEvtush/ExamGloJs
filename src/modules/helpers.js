@@ -18,7 +18,6 @@ export const animate = ({ timing, draw, duration }) => {
  
 	});
 };
-
 export const validations = {
 	"tel": (elem) => {
 		let bool;
@@ -160,7 +159,6 @@ export const  visiblityElem = (target)=> {
 			right: window.pageXOffset + document.documentElement.clientWidth,
 		 	bottom: window.pageYOffset + document.documentElement.clientHeight
 	  };
- 
 	if (
 	  targetPosition.top < windowPosition.bottom  // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
 	 ) { 

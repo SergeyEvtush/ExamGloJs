@@ -30,4 +30,9 @@ sliderSwiper({
 	rightArrow: '.arrow-right',
 	slidesPerviev: 3
 });
-accordeon();
+accordeon({
+	accordeonClass:'.accordeon',
+	accordeonitemsCollectionClass:'.element',
+	visibilityClass:'active',
+	contentClass:'.element-content'
+});
