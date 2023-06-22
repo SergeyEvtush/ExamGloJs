@@ -7,12 +7,12 @@ export const slider = (sliderBlockClass, slidesClass) => {
 	const sliderBlock = document.querySelector(sliderBlockClass);
 	const slides = sliderBlock.querySelectorAll(slidesClass);
 	const dots =  sliderBlock.querySelectorAll('.dot');
-	const timeInterval = 2000;
+	const timeInterval = 3000;
 	const activeSliderClass = 'item-active';
 	const dotsActiveClass = 'dot-active';
 	let currentSlide = 0;
 	let interval;
-
+	
 	const prevSlide = (elems,index,strClass) => { 
 		elems[index].classList.remove(strClass);
 	};
@@ -21,7 +21,7 @@ export const slider = (sliderBlockClass, slidesClass) => {
 		elems[index].classList.add(strClass);
 	};
 
-	const startSlide = (time = 1500) => {
+	const startSlide = (time = 2000) => {
 					
 		interval=setInterval(autoSlide,time);
 	 };
