@@ -26,12 +26,6 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 			"fio": "Фамилия Имя",
 			"tel":"Номер телефона"
 		}
-		
-		
-
-
-		
-
 		formData.forEach((key, val) => {
 			formBody[key] = val;
 		});
