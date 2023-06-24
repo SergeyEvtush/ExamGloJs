@@ -7,6 +7,7 @@ import {  accordeon } from "./modules/accordeon";
 
 
 
+
 mainMenu();
 scrollingArrow();
 modal();

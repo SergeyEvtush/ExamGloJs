@@ -6,10 +6,10 @@ export const slider = (sliderBlockClass, slidesClass) => {
 	createDots();
 	const sliderBlock = document.querySelector(sliderBlockClass);
 	const slides = sliderBlock.querySelectorAll(slidesClass);
-	const dots =  sliderBlock.querySelectorAll('.dot');
+	const dots =  sliderBlock.querySelectorAll('.slick');
 	const timeInterval = 3000;
 	const activeSliderClass = 'item-active';
-	const dotsActiveClass = 'dot-active';
+	const dotsActiveClass = 'slick-active';
 	let currentSlide = 0;
 	let interval;
 	
@@ -47,8 +47,8 @@ export const slider = (sliderBlockClass, slidesClass) => {
 			const target = e.target;
 			
 			
-			if (!target.closest('.dot,.top-slider-btn')) {
-				console.log('fuck');
+			if (!target.closest('.slick,.slick-arrow')) {
+				console.log(target);
 				return;
 			}
 			prevSlide(slides, currentSlide, activeSliderClass);
@@ -61,7 +61,7 @@ export const slider = (sliderBlockClass, slidesClass) => {
 				console.log('left');
 				currentSlide--;
 			}
-			else if (target.classList.contains('dot')) {
+			else if (target.classList.contains('slick')) {
 				dots.forEach((el, index) => {
 					if (target === el) {
 						currentSlide = index;
@@ -78,12 +78,12 @@ export const slider = (sliderBlockClass, slidesClass) => {
 			nextSlide(dots, currentSlide, dotsActiveClass);
 		});
 		sliderBlock.addEventListener('mouseenter', (e) => {
-			if (e.target.matches('.dot,.top-slider-btn')) {
+			if (e.target.matches('.slick,.top-slider-btn')) {
 				stopSlide();
 			}
 		}, true);
 		sliderBlock.addEventListener('mouseleave', (e) => {
-			if (e.target.matches('.dot,.top-slider-btn')) {
+			if (e.target.matches('.slick,.top-slider-btn')) {
 				startSlide(timeInterval);
 			}
 		}, true);
@@ -112,4 +112,6 @@ export const sliderSwiper = ({sliderClass = '', leftArrow = '', rightArrow = '',
 			prevEl: leftArrow,
 		 },
 	 });
- }
+}
+ 
+

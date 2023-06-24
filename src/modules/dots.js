@@ -1,21 +1,11 @@
 export const createDots = () => {
-	const portfolioDot = document.querySelector('.top-slider-dots');
+	const portfolioDot = document.querySelector('.slick-dots');
 	const portfolioItems = document.querySelectorAll('.item');
-	portfolioDot.computedStyleMap.cssText = `
-	position: absolute;
-	bottom: 20px;
-	width: 100%;
-	margin: 20px auto 0;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	z-index: 5;
-	`;
+	
 	const createElem = () => {
 		const el = document.createElement('li');
+		/* const btn = document.createElement('button');
+		el.append(btn); */
 		return el;
 	};
 	const appendClass = (elem, classElem) => {
@@ -25,10 +15,10 @@ export const createDots = () => {
 		sliders.forEach((el, index) => {
 			const dot = createElem();
 			if (index === 0) {
-				appendClass(dot, 'dot');
-				appendClass(dot, 'dot-active');
+				appendClass(dot, 'slick');
+				appendClass(dot, 'slick-active');
 			} else {
-				appendClass(dot, 'dot');
+				appendClass(dot, 'slick');
 			}
 			parentDots.append(dot);
 		});

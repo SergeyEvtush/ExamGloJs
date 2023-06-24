@@ -519,6 +519,8 @@ img.right{
   list-style: none;
   text-align: center;
   display: block;
+  position: absolute;
+  z-index: 50;
 }
 .slick-dots li button{
     position: absolute;
@@ -527,11 +529,12 @@ img.right{
     border: none;
     border-radius: 50%;
     display: block;
-    opacity: 0;
+    opacity: 0; 
+	 cursor:pointer;
 }
 .slick-dots li {
     cursor: pointer;
-    border: 2px solid #E9BB26;
+    border: 1px solid #E9BB26;
     display: inline-block;
     border-radius: 50%;
     width: 14px;
@@ -541,7 +544,7 @@ img.right{
     position: relative;
 }
 .slick-dots li.slick-active{
-    background: #E9BB26;
+    background: #192ac7;
 }
 .slick-prev,
 .slick-next{
@@ -553,14 +556,20 @@ img.right{
     position: absolute;
     top: 50%;
     margin-top: -20px;
-    z-index: 10;
+    z-index: 30;
     cursor: pointer;
 }
+@media(max-width:768px){
+	.slick-prev,
+.slick-next{
+	display: none;
+}
+}
 .slick-prev{
-    left: -50px;
+    left: 50px;
 }
 .slick-next{
-    right: -50px;
+    right: 50px;
 }
 .slick-prev:after,
 .slick-next:after{
