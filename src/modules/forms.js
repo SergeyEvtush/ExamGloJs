@@ -43,10 +43,10 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 
 		if (statusBlock) {
 			const messageBtn = document.querySelector('.fancyClose');
-			const owerlayModal = document.querySelector('.modal-overlay');
+			
 			messageBtn.addEventListener('click', (e) => { 
 				e.preventDefault();
-				addRemoveStyle(statusBlock, owerlayModal, 'none');
+				addRemoveStyle([statusBlock], 'none');
 				
 			});
 			

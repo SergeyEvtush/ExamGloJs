@@ -140,9 +140,8 @@ export const findModal = (modal,width) => {
 		z-index:999;`;
 	}
 }
-export const addRemoveStyle = (el,el2, style) => {
-	el.style.display = style;
-	el2.style.display = style;
+export const addRemoveStyle = (arrayEl, style) => {
+	arrayEl.forEach(el => {el.style.display = style; });
 };
 export const  visiblityElem = (target)=> {
 	// Все позиции элемента

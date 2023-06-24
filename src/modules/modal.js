@@ -14,11 +14,11 @@ export const modal = () => {
 			if (id) {
 				const modal = document.querySelector(id);
 				findModal(modal,window.innerWidth);
-				addRemoveStyle(modal, owerlayModal, 'block');
+				addRemoveStyle([modal, owerlayModal], 'block');
 
 				window.addEventListener('click', (e) => {
 					if(e.target.closest('.modal-close')||e.target.closest('.modal-overlay')){
-						addRemoveStyle(modal, owerlayModal, 'none');
+						addRemoveStyle([modal, owerlayModal] ,'none');
 					}
 				});
 			}
