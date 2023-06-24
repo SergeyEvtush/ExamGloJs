@@ -626,11 +626,23 @@ a.absolute {
 .pswp__caption__center .title-h3 {
 	margin: 15px 0 5px;
 }
+.services-elements{
+	opacity: 0;
+}
+.services-elements._activeScroll{
+	transition:opacity 0.5s ease 0.5s ;
+	opacity: 1;
+}
 .num-section {
 	background: url(../images/num-section.jpg) 0 0 no-repeat;
 	background-attachment: fixed;
 	color: #fff;
 	position: relative;
+	opacity: 0;
+}
+.num-section._activeScroll{
+	transition:all 0.5s ease 0.3s;
+	opacity: 1;
 }
 .ie .num-section {
 	background-attachment: scroll;

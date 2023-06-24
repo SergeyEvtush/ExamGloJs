@@ -125,5 +125,28 @@ export const sliderSwiper = ({sliderClass = '', leftArrow = '', rightArrow = '',
 		}
 	 });
 }
- 
+
+export const sliderNums = () => { 
+	return new Swiper('.row-swiper', {
+		direction: 'horizontal',
+		loop: true,
+		grabCursor: true,
+		slidesPerView: 4,
+		speed: 400,
+		breakpoints: {
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 40
+			},
+			464: {
+				slidesPerView: 2,
+				spaceBetween: 40
+			},
+			327: {
+				slidesPerView:1,
+				spaceBetween: 40
+			}
+		}
+	});
+}
 

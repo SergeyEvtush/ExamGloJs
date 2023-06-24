@@ -170,7 +170,7 @@
 				<div class="push40"></div>
 
 
-				<div class="services-elements swiper">
+				<div class="services-elements swiper _anim-items">
 					<div class="row services-carousel swiper-wrapper">
 						<div class="col-sm-6 col-md-4 swiper-slide">
 							<div class="element relative">
@@ -304,14 +304,15 @@
 
 
 		<!-- * * * * * * Num counters section * * * * * * -->
-		<section class="num-section">
+		<section class="num-section _anim-items">
 			<div class="push90"></div>
 			<div class="push10 visible-xs"></div>
 			<div class="container text-center">
 				<p class="bold f34 upper helios">О нашей компании<br class="hidden-xs hidden-lg" /> в цифрах</p>
 				<div class="push20"></div>
-				<div class="row">
-					<div class="col-sm-3">
+				<div class="row-swiper swiper">
+				<div class="row swiper-wrapper">
+					<div class="col-sm-3 swiper-slide">
 						<div class="element">
 							<div class="num num1">&gt; <span id="num1">0</span> </div>
 							<br />
@@ -319,7 +320,7 @@
 						</div>
 						<div class="push30 visible-xs"></div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-3 swiper-slide">
 						<div class="element">
 							<div class="num num3"><span id="num3">0</span> лет</div>
 							<br />
@@ -327,7 +328,7 @@
 						</div>
 						<div class="push30 visible-xs"></div>
 					</div>
-					<div class="col-sm-3">
+					<div class="col-sm-3 swiper-slide">
 						<div class="element">
 							<div class="num num2"><span id="num2">0</span> мин.</div>
 							<br />
@@ -335,8 +336,7 @@
 						</div>
 						<div class="push30 visible-xs"></div>
 					</div>
-
-					<div class="col-sm-3">
+					<div class="col-sm-3 swiper-slide">
 						<div class="element">
 							<div class="num num4">&gt; <span id="num4">0</span> </div>
 							<br />
@@ -344,6 +344,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 			<div class="push80"></div>
 			<div class="push10 visible-xs"></div>
@@ -609,8 +610,6 @@
 							});
 					mapexMap.behaviors.disable('scrollZoom');
 					mapexMap.geoObjects.add(myPlacemark);
-
-
 				});
 			</script>
 		</section>

@@ -2,12 +2,16 @@ import { sendForm } from "./modules/forms";
 import { modal } from "./modules/modal";
 import {  mainMenu } from "./modules/mainMenu";
 import {  scrollingArrow } from "./modules/scrollingArrow";
-import {  slider,sliderSwiper } from "./modules/slider";
+import {  slider,sliderSwiper,sliderNums } from "./modules/slider";
 import {  accordeon } from "./modules/accordeon";
+import {  animationScroll } from "./modules/helpers";
+import {  numSectionAnimation } from "./modules/numSectionAnimaton";
 
 
 
-
+animationScroll();
+numSectionAnimation();
+sliderNums();
 mainMenu();
 scrollingArrow();
 modal();
