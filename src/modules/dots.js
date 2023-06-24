@@ -4,8 +4,8 @@ export const createDots = () => {
 	
 	const createElem = () => {
 		const el = document.createElement('li');
-		/* const btn = document.createElement('button');
-		el.append(btn); */
+		const btn = document.createElement('button');
+		el.append(btn);
 		return el;
 	};
 	const appendClass = (elem, classElem) => {

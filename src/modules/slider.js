@@ -48,17 +48,15 @@ export const slider = (sliderBlockClass, slidesClass) => {
 			
 			
 			if (!target.closest('.slick,.slick-arrow')) {
-				console.log(target);
+
 				return;
 			}
 			prevSlide(slides, currentSlide, activeSliderClass);
 			prevSlide(dots, currentSlide, dotsActiveClass);
 			if (target.closest('#arrow-right')) {
-				console.log('right');
 				currentSlide++;
 			}
 			else if (target.closest('#arrow-left')) {
-				console.log('left');
 				currentSlide--;
 			}
 			else if (target.classList.contains('slick')) {
@@ -104,13 +102,27 @@ export const sliderSwiper = ({sliderClass = '', leftArrow = '', rightArrow = '',
 		direction: 'horizontal',
 		loop:true,
 		grabCursor:true,
-		slidesPerView: slidesPerviev,
+		slidesPerView: 1,
 		speed: 400,
 		spaceBetween: 100,
 		navigation: {
 			nextEl: rightArrow,
 			prevEl: leftArrow,
-		 },
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: slidesPerviev,
+				spaceBetween: 40
+			},
+			464: {
+				slidesPerView: slidesPerviev-1,
+				spaceBetween: 40
+			},
+			327: {
+				slidesPerView:slidesPerviev-2,
+				spaceBetween: 40
+			}
+		}
 	 });
 }
  

@@ -29,7 +29,7 @@ sliderSwiper({
 	sliderClass: '.services-elements',
 	leftArrow: '.arrow-left',
 	rightArrow: '.arrow-right',
-	slidesPerviev: 3
+	slidesPerviev: 3,
 });
 accordeon({
 	accordeonClass:'.accordeon',
