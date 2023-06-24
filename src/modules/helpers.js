@@ -165,4 +165,22 @@ export const  visiblityElem = (target)=> {
 	} else {
 		return false;
 	};
- };
+};
+ export const fillInput = (inputsArray, data) => {
+	 if (data) {
+		 if (data.length > 0) {
+			 inputsArray.forEach(el => {
+				 if (el.hasAttribute('readonly')) {
+					console.log(data);
+					 el.value = data;
+					 el.setAttribute('data-application', `${data}`);
+				 } else {
+					 return;
+				 }
+			 });
+		  }
+		 
+	 } else { 
+		 return;
+	 }
+};

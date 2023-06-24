@@ -25,7 +25,8 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 			"fio": "Фамилия Имя",
 			"tel": "Номер телефона"
 		};
-
+		
+	
 		formData.forEach((key, val) => {
 			formBody[key] = val;
 		});
@@ -55,15 +56,19 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 		if (val.some(el => el.hasOwnProperty(bool))) {
 			const arrayErrors = val.filter(el => el.hasOwnProperty(bool));
 			findModal(statusBlock, window.innerWidth);
-			modalContent.innerHTML = '';
+				modalContent.innerHTML = '';
+			formElements.forEach(el => { 
+				if (el.hasAttribute('data-application')) { 
+					el.value = el.dataset.application;
+				}
+			});
 			statusBlock.style.display = 'block';
 			modalContent.classList.add('error');
+			form.setAttribute('data-error', 'error');
 			form.style.display = 'none';
-
 			arrayErrors.forEach(elem => { 
 				modalContent.insertAdjacentHTML('afterbegin',
 					` Ошибка ввода данных в input ${elem[bool] === "fio" ? nameInputs["fio"] : nameInputs["tel"]}`);
-				
 				setTimeout(() => {
 					statusBlock.style.display = 'none';
 					form.style.display = 'block';
@@ -74,10 +79,8 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 						` Ошибка ввода данных в поле:<p> ${elem[bool] === "fio" ? nameInputs["fio"] : nameInputs["tel"]}</p >`;
 					setTimeout(() => {formContainer.querySelector('.title-h2').innerHTML =formText;},2000);
 				}, 2000);
-				
+				formContainer.querySelector('.title-h2').innerHTML = formText;
 			}); 
-			
-			console.log(formContainer.querySelector('.title-h2'));
 			
 		} else {  
 			
@@ -87,6 +90,9 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 			modalContent.innerHTML = '';
 			statusBlock.style.display = 'block';
 			modalContent.classList.add('error');
+			if (form.hasAttribute('data-error')) { 
+				form.removeAttribute('data-error');
+			}
 		 } 
 		
 		formElements.forEach(el => {
@@ -98,6 +104,7 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 		if (!form) {
 			throw new Error('Ошибка нет формы');
 		}
+		//fillInput(formElements);
 		form.addEventListener('submit', (e) => {
 			e.preventDefault();
 				submitForm();
