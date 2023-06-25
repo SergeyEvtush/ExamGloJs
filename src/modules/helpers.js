@@ -74,7 +74,7 @@ export const validationForm = (formInputs, functions) => {
 			arr.push(obj);
 		}
 	});
-	console.log(arr);
+
 	return arr;
 };
 export const isError = (elem, bool) => {
@@ -87,14 +87,11 @@ export const isError = (elem, bool) => {
 		elem.classList.add('iserror');
 		elem.value = message.errorMessage;
 		setTimeout(()=>{elem.value = ''}, 1000);
-		console.log(message.errorMessage);
 		
 	} else {
 		if (elem.classList.contains('iserror')) {
 			elem.classList.remove('iserror');
-			console.log(message.succesMessage);
 		}
-		console.log(message.succesMessage);
 		
 	}
 	return bool;
@@ -172,7 +169,6 @@ export const  visiblityElem = (target)=> {
 		 if (data.length > 0) {
 			 inputsArray.forEach(el => {
 				 if (el.hasAttribute('readonly')) {
-					console.log(data);
 					 el.value = data;
 					 el.setAttribute('data-application', `${data}`);
 				 } else {
