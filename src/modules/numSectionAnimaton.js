@@ -18,27 +18,44 @@ export const numSectionAnimation = () => {
 		if (visiblityElem(numSection)) {
 			const num = numSection.querySelectorAll('.num');
 			num.forEach(element => {
-				element.classList.add('animated');
+				
+				
 				const span = element.querySelector('span');
 				const id = span.id;
-				
-					if (Object.keys(data).includes(id)) { 
+				if (element.classList.contains('animated')) {
+					if (Object.keys(data).includes(id)) {
+						startAnimate(false);
 						span.innerHTML = data[id];
-						animate({
-							duration: 1000,
-							timing(timeFraction) {
-							  return timeFraction;
-							},
-							draw(progress) {
-								span.innerHTML = Math.round(((progress*1000) * (data[id]*1000))/1000000);
-							}
-						});
 					}
+				} else {
+					element.classList.add('animated');
+				if (Object.keys(data).includes(id)) { 
+					span.innerHTML = data[id];
+					startAnimate(true,span,data[id]);
+					}
+				 }
 				
+					
 				
 			});
 		}
+	
 	});
 	
-
+	function startAnimate(bool = true, element,dataElem) {
+		
+		if (bool==true) {
+			return animate({
+				duration: 1000,
+				timing(timeFraction) {
+					return timeFraction;
+				},
+				draw(progress) {
+					element.innerHTML = Math.round(((progress * 1000) * (dataElem * 1000)) / 1000000);
+				}
+			});
+		} else { 
+			return;
+		}
+	 }
 };

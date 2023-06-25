@@ -63,6 +63,7 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 				}
 			});
 			statusBlock.style.display = 'block';
+			const formText = formContainer.querySelector('.title-h2').innerHTML;
 			modalContent.classList.add('error');
 			form.setAttribute('data-error', 'error');
 			form.style.display = 'none';
@@ -74,7 +75,6 @@ export const sendForm = ({ formId, someElem = [] },url) => {
 					form.style.display = 'block';
 					modalContent.classList.remove('error');
 					modalContent.innerHTML = '';
-					const formText = formContainer.querySelector('.title-h2').innerHTML;
 					formContainer.querySelector('.title-h2').innerHTML =
 						` Ошибка ввода данных в поле:<p> ${elem[bool] === "fio" ? nameInputs["fio"] : nameInputs["tel"]}</p >`;
 					setTimeout(() => {formContainer.querySelector('.title-h2').innerHTML =formText;},2000);
